@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -7,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
 import ProtectedRoute from "@/components/auth/ProtectedRoute";
 import { Layout } from "./components/layout/Layout";
+import { LandingPage } from "./pages/LandingPage";
 import Dashboard from "./pages/Dashboard";
 import Students from "./pages/Students";
 import Courses from "./pages/Courses";
@@ -27,11 +27,12 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             {/* Public Routes */}
+            <Route path="/" element={<LandingPage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             
             {/* Protected Routes */}
-            <Route path="/" element={
+            <Route path="/dashboard" element={
               <ProtectedRoute>
                 <Layout>
                   <Dashboard />

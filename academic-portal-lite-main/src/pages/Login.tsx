@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
@@ -27,7 +26,7 @@ const Login = () => {
           title: "Login successful",
           description: "Welcome back to the College ERP system.",
         });
-        navigate("/");
+        navigate("/dashboard");
       } else {
         toast({
           title: "Login failed",
@@ -50,19 +49,19 @@ const Login = () => {
     <div className="flex items-center justify-center min-h-screen bg-background px-4">
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1 text-center">
-          <CardTitle className="text-2xl font-bold">Login</CardTitle>
+          <CardTitle className="text-2xl font-bold">Admin Login</CardTitle>
           <CardDescription>
-            Enter your credentials to access your account
+            Enter your admin credentials to access the College ERP system
           </CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
           <CardContent className="space-y-4">
             <div className="space-y-2">
-              <label htmlFor="email" className="text-sm font-medium">Email</label>
+              <label htmlFor="email" className="text-sm font-medium">Admin Email</label>
               <Input
                 id="email"
                 type="email"
-                placeholder="your@email.com"
+                placeholder="admin@college.edu"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -91,13 +90,13 @@ const Login = () => {
               className="w-full" 
               disabled={isLoading}
             >
-              {isLoading ? "Signing in..." : "Sign in"}
+              {isLoading ? "Signing in..." : "Sign in as Admin"}
               {!isLoading && <LogIn className="ml-2 h-4 w-4" />}
             </Button>
             <div className="text-center text-sm">
-              Don't have an account?{" "}
+              Don't have an admin account?{" "}
               <Link to="/signup" className="text-primary font-medium hover:underline">
-                Sign up
+                Contact System Administrator
               </Link>
             </div>
           </CardFooter>
