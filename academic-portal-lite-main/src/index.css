@@ -1,0 +1,102 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 55% 98%;
+    --foreground: 260 25% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 260 25% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 260 25% 11%;
+
+    --primary: 260 35% 55%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 260 25% 95%;
+    --secondary-foreground: 260 35% 40%;
+
+    --muted: 260 15% 90%;
+    --muted-foreground: 260 10% 50%;
+
+    --accent: 260 25% 95%;
+    --accent-foreground: 260 35% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 260 15% 90%;
+    --input: 260 15% 90%;
+    --ring: 260 35% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 260 35% 25%;
+    --sidebar-foreground: 260 10% 95%;
+    --sidebar-primary: 260 35% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 260 30% 30%;
+    --sidebar-accent-foreground: 260 10% 95%;
+    --sidebar-border: 260 25% 35%;
+    --sidebar-ring: 260 35% 65%;
+  }
+
+  .dark {
+    --background: 260 25% 11%;
+    --foreground: 0 0% 93%;
+
+    --card: 260 25% 13%;
+    --card-foreground: 0 0% 93%;
+
+    --popover: 260 25% 13%;
+    --popover-foreground: 0 0% 93%;
+
+    --primary: 260 35% 55%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 260 15% 20%;
+    --secondary-foreground: 0 0% 93%;
+
+    --muted: 260 15% 20%;
+    --muted-foreground: 260 10% 70%;
+
+    --accent: 260 15% 20%;
+    --accent-foreground: 0 0% 93%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 260 15% 20%;
+    --input: 260 15% 20%;
+    --ring: 260 35% 55%;
+    
+    --sidebar-background: 260 25% 15%;
+    --sidebar-foreground: 260 10% 95%;
+    --sidebar-primary: 260 35% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 260 20% 20%;
+    --sidebar-accent-foreground: 260 10% 95%;
+    --sidebar-border: 260 20% 25%;
+    --sidebar-ring: 260 35% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer utilities {
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+}
